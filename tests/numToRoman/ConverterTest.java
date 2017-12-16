@@ -15,7 +15,18 @@ public class ConverterTest {
 	}
 	
 	@Test
-	public void canTranslate101ToCI() {
-		assertEquals("CI", converter.run(101));
+	public void romanUnitsCanBeGenerated(){
+		assertEquals("I", converter.getRoman(1));
+		assertEquals("X", converter.getRoman(10));
+		assertEquals("XL", converter.getRoman(40));
+		assertEquals("L", converter.getRoman(50));
+		assertEquals("C", converter.getRoman(100));
+	}
+	
+	@Test
+	public void romanUnitsCannotBeGenerated(){
+		assertEquals("The key doesn't exist", converter.getRoman(12));
+		assertEquals("The key doesn't exist", converter.getRoman(42));
+		assertEquals("The key doesn't exist", converter.getRoman(2));
 	}
 }
