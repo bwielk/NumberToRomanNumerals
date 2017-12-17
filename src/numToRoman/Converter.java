@@ -12,9 +12,12 @@ public class Converter {
 		String result = "";	
 		while(number != 0){
 			for(int i = 0; i<numbers.length; i++){
+				int unitOccurence = number/numbers[i];
 				if(numbers[i]<=number){
-					result = result + romanNumerals[i];
-					number -= numbers[i];
+					for(int x = 0; x<unitOccurence; x++){
+						result = result + romanNumerals[i];
+					}
+					number -= (numbers[i]*unitOccurence);
 				}
 			}
 		}
