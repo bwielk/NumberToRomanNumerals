@@ -15,6 +15,16 @@ public class ConverterTest {
 	}
 	
 	@Test
+	public void turnsUnitsIntoRomans(){
+		assertEquals("I", converter.run(1));
+		assertEquals("IV", converter.run(4));
+		assertEquals("V", converter.run(5));
+		assertEquals("VI", converter.run(6));
+		assertEquals("VII", converter.run(7));
+		assertEquals("IX", converter.run(9));
+	}
+	
+	@Test
 	public void turnsTeensIntoRomans(){
 		assertEquals("XI", converter.run(11));
 		assertEquals("XIII", converter.run(13));
@@ -48,6 +58,7 @@ public class ConverterTest {
 		assertEquals("CCXXIV", converter.run(224));
 		assertEquals("CCCXXXVI", converter.run(336));
 		assertEquals("CDXXXIX", converter.run(439));
+		assertEquals("CDXC", converter.run(490));
 		assertEquals("DXLIV", converter.run(544));
 		assertEquals("DCXLVI", converter.run(646));
 		assertEquals("DCCLIII", converter.run(753));
@@ -78,5 +89,6 @@ public class ConverterTest {
 		assertEquals("MCMXLIII", converter.run(1943));
 		assertEquals("MCMXCIX", converter.run(1999));
 		assertEquals("MMCDXCV", converter.run(2495));
+		assertEquals("MMMCMXCII", converter.run(3992));
 	}
 }
